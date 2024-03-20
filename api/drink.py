@@ -79,7 +79,8 @@ class DrinkyAPI:
                     return jsonify([result.read()])  # Assuming you have a read() method in your DrinkyApi model
                 else:
                     return jsonify({"message": "Drink not found"}), 404
-    
+
+
     # class _update(Resource):
     #     def put(self, id):  # Update method
     #         ''' Read data for json body '''
