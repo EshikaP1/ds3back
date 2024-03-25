@@ -66,6 +66,7 @@ class ExerciseRegression:
 
 def predictWeight(contestant):        
     #display(contestant)
+    #pd.read_json(contestant)
     contestant = pd.DataFrame({
     'Calories Burn': [237],
     'Dream Weight': [145], 
