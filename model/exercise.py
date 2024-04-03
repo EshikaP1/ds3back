@@ -26,7 +26,7 @@ class ExerciseRegression:
         #self.encoder = None
 
     def initExercise(self):
-        exercise_data = pd.read_csv('/home/eneter/vscode/3backesh/exercise.csv')
+        exercise_data = pd.read_csv('exercise.csv')
         ex = exercise_data
         ex.drop(['ID'], axis=1, inplace=True)
         ex.dropna(inplace=True) # drop rows with at least one missing value, after dropping unuseful columns
