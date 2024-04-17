@@ -203,10 +203,10 @@ def initUsers():
         """Create database and tables"""
         db.create_all()
         """Tester data for table"""
-        u1 = User(name='Chrissie Zhou', uid='chrissiescookies', password='password', dob=date(2008, 1, 20))
-        u2 = User(name='Nicholas Tesla', uid='niko', password='123niko', dob=date(1856, 7, 10))
-        u3 = User(name='Alexander Graham Bell', uid='lex')
-        u4 = User(name='Grace Hopper', uid='hop', password='123hop', dob=date(1906, 12, 9))
+        u1 = User(name='Chrissie Zhou', uid='chrissie', password='123chris', dob=date(2008, 1, 20))
+        u2 = User(name='Isabelle Park', uid='Isabelle', password='123belle', dob=date(2006, 5, 16))
+        u3 = User(name='Sreeja Rai', uid='Sreeja', password='123sreeja', dob=date(2006,3,7))
+        u4 = User(name='Nupur Bhalla', uid='Nup', password='123nup', dob=date(2008, 4, 4))
         users = [u1, u2, u3, u4]
 
         """Builds sample user/note(s) data"""
