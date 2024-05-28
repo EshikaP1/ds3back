@@ -61,12 +61,12 @@ def create_user():
 def init_users():
     with app.app_context():
         db.create_all()
-        u1 = User(name='Thomas Edison', uid='toby', password='123toby', dob=datetime(1847, 2, 11))
-        u2 = User(name='Nikola Tesla', uid='niko', password='123niko')
-        u3 = User(name='Alexander Graham Bell', uid='lex', password='123lex')
-        u4 = User(name='Eli Whitney', uid='whit', password='123whit')
-        u5 = User(name='Indiana Jones', uid='indi', dob=datetime(1920, 10, 21))
-        u6 = User(name='Marion Ravenwood', uid='raven', dob=datetime(1921, 10, 21))
+        # u1 = User(name='Thomas Edison', uid='toby', password='123toby', dob=datetime(1847, 2, 11))
+        # u2 = User(name='Nikola Tesla', uid='niko', password='123niko')
+        # u3 = User(name='Alexander Graham Bell', uid='lex', password='123lex')
+        # u4 = User(name='Eli Whitney', uid='whit', password='123whit')
+        # u5 = User(name='Indiana Jones', uid='indi', dob=datetime(1920, 10, 21))
+        # u6 = User(name='Marion Ravenwood', uid='raven', dob=datetime(1921, 10, 21))
 
         users = [u1, u2, u3, u4, u5, u6]
 
