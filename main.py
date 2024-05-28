@@ -25,6 +25,7 @@ from model.fitnessy import initFitnessy
 from model.sleeps import init_sleep
 from model.titanic import initTitanic
 from model.exercise import initExercise, predictWeight
+from api.recipe import recipe_api
 
 # setup App pages
 from projects.projects import app_projects # Blueprint directory import projects definition
@@ -43,6 +44,7 @@ app.register_blueprint(drink_api)
 app.register_blueprint(fitness_api)
 app.register_blueprint(titanic_api)
 app.register_blueprint(sleep_api)
+app.register_blueprint(recipe_api)
 #app.register_blueprint(exercise_api)
 @app.errorhandler(404)  # catch for URL not found
 def page_not_found(e):
