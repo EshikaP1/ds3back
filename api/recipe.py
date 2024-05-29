@@ -54,6 +54,17 @@ class _Search(Resource):
 
         return jsonify(results)
 
+class _SearchByGenre(Resource):
+    def get(self):
+        genre = request.args.get('genre')
+        if not genre:
+            return {"error": "No genre provided"}, 400
+
+        recipes = beautify_json_data('model/recipe.json')
+        results = [item for item in recipes if item['type'].lower() == genre.lower()]
+
+        return jsonify(results)
+
 class _Count(Resource):
     def get(self):
         recipes = beautify_json_data('model/recipe.json')
@@ -63,4 +74,5 @@ class _Count(Resource):
 api.add_resource(_Read, '/')
 api.add_resource(_ReadRandom, '/random')
 api.add_resource(_Search, '/search')
+api.add_resource(_SearchByGenre, '/searchbygenre')
 api.add_resource(_Count, '/count')
