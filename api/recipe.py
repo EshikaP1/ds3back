@@ -13,7 +13,7 @@ def beautify_json_data(json_file_path):
         with open(json_file_path, 'r') as json_file:
             data = json.load(json_file)
 
-        beautified_data = []
+        recipes = []
         for item in data.get('items', []):
             beautified_item = {
                 "id": item.get("id", 0),
@@ -23,9 +23,9 @@ def beautify_json_data(json_file_path):
                 "type": item.get("genre", ""),
             }
 
-            beautified_data.append(beautified_item)
+            recipes.append(beautified_item)
 
-        return beautified_data
+        return recipes
 
     except FileNotFoundError:
         return {"error": "File not found"}
@@ -39,8 +39,8 @@ class _Read(Resource):
 
 class _ReadRandom(Resource):
     def get(self):
-        beautified_data = beautify_json_data('model/recipe.json')
-        random_item = random.choice(beautified_data)
+        recipes = beautify_json_data('model/recipe.json')
+        random_item = random.choice(recipes)
         return jsonify(random_item)
 
 class _Search(Resource):
@@ -49,15 +49,15 @@ class _Search(Resource):
         if not query:
             return {"error": "No query provided"}, 400
 
-        beautified_data = beautify_json_data('model/recipe.json')
-        results = [item for item in beautified_data if query.lower() in item['recipe'].lower()]
+        recipes = beautify_json_data('model/recipe.json')
+        results = [item for item in recipes if query.lower() in item['recipe'].lower()]
 
         return jsonify(results)
 
 class _Count(Resource):
     def get(self):
-        beautified_data = beautify_json_data('model/recipe.json')
-        count = len(beautified_data)
+        recipes = beautify_json_data('model/recipe.json')
+        count = len(recipes)
         return {"count": count}
 
 api.add_resource(_Read, '/')
